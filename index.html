@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>ASP</title>
+	<!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/mystyle.css"> -->
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="bootstrap/js/bootstrap.min.js">
+</head>
+
+<body>
+	<div class="container">
+		<div class="content">
+			<h1 style="text-align:center; margin-top:60px; font-weight: bold">
+				<!-- Aerial Image Recognition: A Revisit From Tile-level Scene Classification to Pixel-level Semantic Parsing -->
+				Aerial Scene Parsing: From Tile-level Scene <br> Classification to Pixel-level Semantic Labeling
+			</h1>
+			<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px">
+				<a href="http://www.captain-whu.com/longyang_En.html" target="_blank">Yang Long<sup>2</sup></a>,
+				<a href="http://www.captain-whu.com/xia_En.html" target="_blank">Gui-Song Xia<sup>1,2,*</sup></a>,
+				<!-- <a href="http://people.ucas.ac.cn/~shyli" target="_blank">Shengyang Li<sup>3</sup></a>, -->
+				<a href="http://www.captain-whu.com/yangwen.html" target="_blank">Wen Yang<sup>2,3</sup></a>, 
+				<!-- <a href="https://sites.google.com/site/michaelyingyang/home" target="_blank">Michael Ying Yang<sup>5</sup></a>, -->
+				<!-- <a href="https://www.sipeo.bgu.tum.de/team/zhu" target="_blank">Xiao Xiang Zhu<sup>6</sup></a>, -->
+				<a href="http://www.lmars.whu.edu.cn/prof_web/zhangliangpei/rs/index.html" target="_blank">Liangpei Zhang<sup>2</sup></a>,
+				<a href="http://www.lmars.whu.edu.cn/prof_web/prof_lideren/ldryinwenjl.htm" target="_blank">Deren Li<sup>2</sup></a>.
+			</p>
+			<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 15px;font-style: italic;">
+				1. School of Computer Science, Wuhan University, Wuhan 430079, China <br>
+				2. State Key Lab. LIESMARS, Wuhan University, Wuhan 430079, China <br>
+				3. School of Electronic Information, Wuhan University, Wuhan 430072, China <br>
+				<!-- 3. Key Laboratory of Space Utilization, Technology and Engineering Center for Space Utilization, Chinese Academy of Sciences, Beijing 100094, China <br> -->
+				<!-- 4. School of Electronic Information, Wuhan University, Wuhan 430072, China <br> -->
+				<!-- 5. Faculty of Geo-Information Science and Earth Observation, University of Twente, Hengelosestraat 99, Enschede, Netherlands <br> -->
+				<!-- 6. German Aerospace Center (DLR) and also Technical University of Munich, Germany -->
+			</p>
+
+		</div>
+
+		<!-- <br><hr> -->
+
+		<div class="row">
+			<div class="span6 offset2">
+				<ul class="nav nav-tabs">
+					<br />
+				</ul>
+			</div>
+		</div>
+
+		<table style= "width:100%;" align="center">
+			<tr>
+				<td style="text-align: center;"><a href="#RoadMap" ><img src="files/RoadMap-Head.jpg" class="img-responsive center-block"/> <br> Road map</a></td>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<td style="text-align: center;"><a href="https://captain-whu.github.io/DiRS/" target="_blank"><img src="files/Million-AID-Head.jpg" class="img-responsive center-block" /> <br> Million-AID</a></td>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<td style="text-align: center;"><a href="files/Paper.pdf" target="_blank"><img src="files/Paper-Head.jpg" class="img-responsive center-block" /> <br> Paper</a></td>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<td style="text-align: center;"><a href="files/PPT.pdf" target="_blank" ><img src="files/PPT-Head.jpg" class="img-responsive center-block" /> <br> PPT</a></td>
+			</tr>
+		 </table>
+
+		<div class="row">
+			<div class="span12">
+				<h2 style="text-align:left; margin-bottom:10px; margin-top:20px; ">
+					- Introduction - 
+				</h2>
+				<p style="text-align:justify; font-size: 17px">
+					Aerial image recognition has become an active topic due to its crucial role in a wide range of applications. The interpretation methods for aerial image recognition have been developing with the improvement of image quality, of which the interpretation performance has been significantly promoted by transferring natural image knowledge with data-driven approaches. In this context, this paper addresses the aerial image recognition from tile-level scene classification to pixel-level semantic parsing after reviewing the aerial image interpretation research. Specifically, we first conduct the review by revisiting the development of aerial image interpretation prototypes and depict their connections with aerial image characters. We then present a large-scale aerial image recognition dataset which consists of more than a million scene instances, termed Million-AID. To provide reliable benchmark for future research, we also report multi-class and multi-label scene classification experiments on Million-AID using the widely employed convolutional neural networks (CNNs). Finally, we explore the transferability of semantic scene knowledge of Million-AID to advance aerial image interpretation from tile-level scene classification to pixel-level semantic parsing. Intensive experiments show that scene recognition on Million-AID is of great challenge and thus able to serve as evaluation benchmark for aerial scene classification algorithms. For scene knowledge transfer, CNN models pre-trained on Million-AID show considerable superiority than those on ImageNet for tile-level semantic interpretation, which demonstrate the strong generalization ability of the proposed Million-AID. Moreover, our designed hierarchical multi-task learning methods achieves the state-of-the-art performance for pixel-level semantic parsing on the challenging GID, which is a profitable attempt to bridge the tile-level  scene classification toward pixel-level semantic parsing for aerial image interpretation. We hope our work could serve as a baseline for aerial scene recognition and inspire rethinking the semantic classification of high resolution aerial images. 
+				</p>
+			</div>
+		</div>
+
+		<br>
+		<div class="row">
+			<div class="span12">
+				<h2 id="RoadMap" style="text-align:left; margin-bottom:10px; margin-top:20px;">
+					- Revisiting Aerial Image Interpretation -
+				</h2>
+				<p style="text-align:justify; font-size: 17px">
+					With the progress of sensor technology, the quality particularly spatial resolution of aerial image has been continuously improved. And the improvement of aerial image quality has also greatly promoted the development of aerial image interpretation. Consequently, the interpretation prototypes has experienced a long course from per-pixel classification, object-based analysis, to scene-level understanding, relying on the visual characteristics of aerial images with different resolutions. 
+				</p>
+				<img src="files/RoadMap.png" width="80%" class="img-responsive center-block" /> 
+			</div>
+		</div>
+
+		<br>
+		<div class="row">
+			<div class="span12">
+				<h2 id="DiRS" style="text-align:left; margin-bottom:10px; margin-top:20px;">
+					- Scene Classification: A New Benchmark on Million-AID -
+				</h2>
+				<p style="text-align:justify; font-size: 17px">
+					Data-driven algorithms represented by deep learning have been reported with overwhelming advantages over the conventional classification methods, and thus, dominated aerial image recognition in recent years. In this section, we train a number of representative CNN models and conduct comprehensive evaluations for multi-class and multi-label scene classification on <a href="https://captain-whu.github.io/DiRS/"><strong><u>Million-AID</u></strong></a>, which we hope to provide a benchmark for future researches. 
+				</p>
+
+				<h4 style="text-align:left; margin-bottom:10px; margin-top:10px; font-weight: bold; font-style: italic">
+					- Million-AID
+				</h4>
+				<img src="files/MAID-Samples.png" width="750px" class="img-responsive center-block" />
+                 
+                <br>
+				<h4 style="text-align:left; margin-bottom:10px; margin-top:10px; font-weight: bold; font-style: italic">
+					- Multi-class classification
+				</h4>
+				<img src="files/Multi-class-classification.svg" width="65%" class="img-responsive center-block" />
+
+				<br>
+				<h4 style="text-align:left; margin-bottom:10px; margin-top:10px; font-weight: bold; font-style: italic">
+					- Multi-label classification
+				</h4>
+				<img src="files/Multi-label-classification.svg" width="97%" class="img-responsive center-block" />
+			</div>
+		</div>
+
+
+		<br>
+		<div class="row">
+			<div class="span12">
+				<h2 id="Million-AID" style="text-align:left; margin-bottom:10px; margin-top:20px;">
+					- Transferring Knowledge From Million-AID -
+				</h2>
+				<p style="text-align:justify; font-size: 17px;">
+					Million-AID consists of large-scale aerial images that characterize diverse scenes. This provides Million-AID with rich semantic knowledge of scene content. Hence, it is natural for us to explore the potential to transfer the semantic knowledge in Million-AID to other domains. To this end, we consider two basic strategies, <i>i.e.</i>, fine-tuning pre-trained networks for tile-level scene classification and hierarchical multi-task learning for pixel-level semantic parsing.  
+				</p>
+				<h4 style="text-align:left; margin-bottom:10px; margin-top:10px; font-weight: bold; font-style: italic">
+					- Fine-tuning pre-trained networks for scene classification
+				</h4>
+				<p style="text-align: center; font-size: 17px;">
+					Classification Accuracy (%) on AID Dataset Using Different Training Schemes
+				</p>
+				<img src="files/Fine-tuning4AID.svg" width="88%" class="img-responsive center-block" />
+				<br>
+				<p style="text-align: center; font-size: 17px;">
+					Classification Accuracy (%) on NWPU-RESISC45 Dataset Using Different Training Schemes
+				</p>
+				<img src="files/Fine-tuning4RESISC45.svg" width="88%" class="img-responsive center-block" />
+
+				<br>
+				<h4 style="text-align:left; margin-bottom:10px; margin-top:10px; font-weight: bold; font-style: italic">
+					- Hierarchical multi-task learning for semantic parsing
+				</h4>
+				<p style="text-align:justify; font-size: 17px;">
+					The conventional CNN learns scene features via stacked convolutional layers and the output of the last fully connected layer is usually employed for scene representation. However, learning stable features from single layer can be a difficult task because of the complexity of scene content. Moreover, data sparsity which is a long-standing notorious problem can easily lead to model overfitting and weak generalization ability because of the insufficient knowledge captured from limited training data. To relieve the above issues, we introduce a hierarchical multi-task learning method and further explore how much the knowledge contained in Million-AID can be transferred to boost the pixel-level semantic parsing of aerial images. To this end, the <a href="https://captain-whu.github.io/GID/"><strong><u>GID</u></strong></a>, which consists of training set with tile-level scenes and large-size test images with pixel-wise annotations, has provided us an opportunity to bridge the tile-level scene classification toward pixel-level semantic parsing. Generally, the presented framework consists four components, <i>i.e.</i>, hierarchical scene representation, multi-task scene classification (MSC), hierarchical semantic fusion (HSF), and pixel-level semantics integration as shown in below. 
+				</p>
+				<img src="files/HMTL.svg" width="87%" class="img-responsive center-block" />
+                
+                <br>
+				<h5 style="text-align:left; margin-bottom:10px; margin-top:10px; font-weight: bold; font-style: italic">
+					- Qualitative comparisons among different classification schemes
+				</h5>
+
+				<img src="files/Ablation.png" width="87%" class="img-responsive center-block" />
+				<p style="text-align:justify; font-size: 16px; font-family: Times; width: 87%; margin-left: 6.5%">
+                    Images in the first to fifth columns indicate the original image, ground truth annotations, classification maps of baseline, MSC, and the full implementation of our method, respectively.
+				</p>
+				<br>
+				<h5 style="text-align:left; margin-bottom:10px; margin-top:10px; font-weight: bold; font-style: italic">
+					- Performance comparison among different methods
+				</h5>
+				<img src="files/SOTA-GID.svg" width="47.2%" class="img-responsive center-block" />
+				<br>
+				<h5 style="text-align:left; margin-bottom:10px; margin-top:10px; font-weight: bold; font-style: italic">
+					- Visulization of classification results
+				</h5>
+				<img src="files/CMSOTA.png" width="87%" class="img-responsive center-block" />
+				<p style="text-align:justify; font-size: 16px; font-family: Times; width: 87%; margin-left: 6.5%">
+                    Visualization of the land cover classification results on the <i>fine classification set</i> of GID. Images in the first to fourth columns indicate the original image, ground truth annotations, classification maps of PT-GID, and classification maps of our method, respectively.
+				</p>
+			</div>
+		</div>
+
+		<br>
+		<div class="row">
+			<div class="span12">
+
+
+                <h3 id="Download" style="text-align:left; margin-bottom:10px; margin-top:10px; font-weight: bold">
+					Download
+				</h3>
+<!-- 				<p style="text-align:justify; font-size: 17px">
+					Million-AID will be released for public accessibility.
+				</p> -->
+				<ul>
+					<li style="font-size:17px">
+						<a href="https://whueducn-my.sharepoint.com/:f:/g/personal/longyang_whu_edu_cn/Et-SJsQYQRxMh63Z59iFyH0Bl7nPamTEj4ZQ9GZ1Ch1Ueg?e=lGfUiM" target="_blank">
+						    Million-AID dataset
+						</a> 
+					</li>
+					<li style="font-size:17px">
+						<a href="">Codes</a> (<i>Coming soon ...</i> )
+					</li>
+				</ul>
+				<!-- <a href="files/Million-AID.jpg" target="_blank" title="Click to enlarge"><img src="files/Million-AID-Display.jpg" width="750px" class="img-responsive center-block" /></a> -->
+
+
+				<div class="section bibtex">
+
+					<h3 style="text-align:left; margin-bottom:10px; margin-top:20px; font-weight: bold">
+						Citation
+					</h3>
+					<pre>
+@article{Long2021ASP,
+title={Aerial Scene Parsing: From Tile-level Scene Classification to Pixel-level Semantic Labeling},
+author={Yang Long and Gui-Song Xia and Wen Yang and Liangpei Zhang and Deren Li},
+year={2021},
+note={in press}
+}</pre>
+	                <br>
+					<pre>
+@article{Long2021DiRS,
+title={On Creating Benchmark Dataset for Aerial Image Interpretation: Reviews, Guidances and Million-AID},
+author={Yang Long and Gui-Song Xia and Shengyang Li and Wen Yang and Michael Ying Yang and Xiao Xiang Zhu and Liangpei Zhang and Deren Li},
+journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
+year={2021},
+volume={14},
+pages={4205-4230}
+}</pre>
+				</div>
+				<h3 style="text-align:left; margin-bottom:10px; margin-top:20px; font-weight: bold">
+					Contact
+				</h3>
+				<p>
+					If you have any problem, please contact:
+				<ul>
+					<li>Yang Long at <strong>longyang@whu.edu.cn</strong></li>
+					<li>Gui-Song Xia at <strong>guisong.xia@whu.edu.cn</strong></li>
+				</ul>
+				<br />
+				<br />
+				<br />
+			</div>
+		</div>
+
+<!-- 		<div class="row">
+			<div style="text-align:center; margin-top:0; margin-bottom: 20px;">
+				<embed id="map" src="http://rf.revolvermaps.com/f/f.swf" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent" allowScriptAccess="always" allowNetworking="all" width="150" height="75" flashvars="m=0&amp;i=5dp1mfnunae&amp;r=10&amp;c=fffdc0" loop="true" autostart="False"></embed> 
+				<img class="img-responsive center-block" src="http://rf.revolvermaps.com/js/c/5dp1mfnunae.gif" width="1" height="1" alt="" value="True"/>
+				<a style="font-size: x-small;"> Copyight@2020, Captain</a>
+				<a href="http://www.revolvermaps.com/livestats/5dp1mfnunae/"></a>
+			</div>
+		</div> -->
+</body>
+
+</html>
